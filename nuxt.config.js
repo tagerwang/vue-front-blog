@@ -31,8 +31,23 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/axios'
   ],
-
+  axios: {
+    // proxy: true,
+    // prefix: '/api/',
+    // credentials: true
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+  // proxy: {
+  //   '/api/': { 
+  //     target: 'https://xxxx.com',//这个网站是开源的可以请求到数据的
+  //     pathRewrite: {
+  //        '^/api/': '/',
+  //        changeOrigin: true
+  //     }    
+  //   }
+  // },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
