@@ -40,8 +40,6 @@ export default {
       }
     }
   },
-  created(){
-  },
   methods: {
     onSubmit(formName){
       this.$refs[formName].validate((valid) => {
@@ -53,7 +51,7 @@ export default {
               const {code, msg} = res.data
               if(code == 200) {
                 this.$message.success('登陆成功');
-                this.$router.push('/')
+                this.$router.push('/home')
               } else {
                 this.$message.warning(msg||'登陆失败');
               }

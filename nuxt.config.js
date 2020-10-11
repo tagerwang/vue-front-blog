@@ -1,3 +1,4 @@
+import path from 'path'
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -21,7 +22,6 @@ export default {
   plugins: [
     '@/plugins/element-ui'
   ],
-
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
@@ -51,5 +51,14 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
+    extend (config, ctx) {
+      if (ctx.isClient) {
+        // 添加 alias 配置
+        Object.assign(config.resolve.alias, {
+          'utils': path.resolve(__dirname, 'utils'),
+          '@': path.resolve(__dirname),
+        })
+      }
+    }
   }
 }
