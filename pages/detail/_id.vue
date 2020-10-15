@@ -6,35 +6,13 @@
         
       </div>
     </div>
-    <el-table
-      :data="list"
-      style="width: 100%">
-      <el-table-column
-        label="创建日期"
-        width="180">
-        <template slot-scope="scope">
-          <span>{{ $dayjs(scope.row.createdAt).format('YYYY-MM-DD HH:mm') }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column
-        prop="title"
-        label="文章标题"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="desc"
-        label="文章描述">
-      </el-table-column>
-      <el-table-column align="center" label="Actions" width="240">
-        <template slot-scope="scope">
-          <router-link :to="'/article/edit/'+scope.row.articleId">
-            <el-button type="primary" size="small" icon="el-icon-edit">
-              查看
-            </el-button>
-          </router-link>
-        </template>
-      </el-table-column>
-    </el-table>
+    <div class="article-detail">
+      <div class="title">
+        {{list[0].title}}
+      </div>
+      <div class="content" v-html="list[0].content">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -62,32 +40,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
 }
 
 .subtitle {
@@ -101,4 +60,34 @@ export default {
 .links {
   padding-top: 15px;
 }
+  /deep/ pre, .language-text{
+    line-height: 1.4;
+    padding: 1.25rem 1.5rem;
+    margin: .85rem 0;
+    background-color: #282c34;
+    border-radius: 6px;
+    overflow: auto;
+    code{
+      color: #fff;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+    }
+  }
+.article-detail{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  .title {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    color: #35495e;
+    height: 40px;
+    line-height: 40px;
+  }
+  .content{
+  }
+}
+
 </style>

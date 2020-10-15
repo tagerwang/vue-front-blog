@@ -2,8 +2,9 @@
   <div class="container">
     <div>
       <div class="header">
-        <div class="line1"></div>
-        
+        <div class="line1">热门文章</div>
+        <hr>
+        <img :src="require('@/assets/images/timg.jpg')" alt="">
       </div>
     </div>
     <div class="list-data">
@@ -38,7 +39,6 @@
       </el-table>
     </div>
     <div>
-{{list}}
     </div>
   </div>
 </template>
@@ -67,14 +67,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .container {
+  width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   text-align: center;
+  .header{
+    .line1{
+      text-align: left;
+      font-size: 16px;
+      font-weight: bolder;
+      padding: 20px 0;
+    }
+  }
 }
 
 .title {
