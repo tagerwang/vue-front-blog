@@ -1,14 +1,32 @@
 <template>
-  <div class="container">
-    <div>
-      <div class="header">
-        <div class="line1">热门文章</div>
-        <hr>
-        <img :src="require('@/assets/images/timg.jpg')" alt="">
-      </div>
+  <div class="container-home">
+    <Header />
+    <div class="banner">
+      <!-- <div class="line1">热门文章</div>
+      <hr> -->
+      <img :src="require('@/assets/images/timg.jpg')" alt="">
     </div>
     <div class="list-data">
-      <el-table
+      <el-card class="box-card" v-for="(item, key) in list" :key="key" :body-style="{padding: 0}">
+            <div slot="header" class="clearfix title">
+              <nuxt-link :to="'/detail/'+item.articleId">
+                <el-button class="goto-detail" type="text">{{item.title}}</el-button>
+              </nuxt-link>
+            </div>
+          <div class="content">
+            <div v-html="item.desc" class="detail"></div>
+          </div>
+          <div class="bottom clearfix">
+            <div class="text item">
+              <span>创建日期：</span>
+              <span>{{ $dayjs(item.createdAt).format('YYYY-MM-DD HH:mm') }}</span>
+            </div>
+            <nuxt-link :to="'/detail/'+item.articleId">
+              <el-button class="goto-detail" type="text">详情</el-button>
+            </nuxt-link>
+          </div>
+      </el-card>
+      <!-- <el-table
         :data="list"
         style="width: 100%">
         <el-table-column
@@ -36,7 +54,7 @@
             </router-link>
           </template>
         </el-table-column>
-      </el-table>
+      </el-table> -->
     </div>
     <div>
     </div>
@@ -68,41 +86,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 1200px;
+.container-home {
+  padding: 0 12px 12px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   text-align: center;
-  .header{
-    .line1{
-      text-align: left;
-      font-size: 16px;
-      font-weight: bolder;
-      padding: 20px 0;
-    }
+  img{
+    width: 100%;
+  }
+  .banner{
+    margin-top: 16px;
   }
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+// .title {
+//   font-family:
+//     'Quicksand',
+//     'Source Sans Pro',
+//     -apple-system,
+//     BlinkMacSystemFont,
+//     'Segoe UI',
+//     Roboto,
+//     'Helvetica Neue',
+//     Arial,
+//     sans-serif;
+//   display: block;
+//   font-weight: 300;
+//   font-size: 100px;
+//   color: #35495e;
+//   letter-spacing: 1px;
+// }
 
 .subtitle {
   font-weight: 300;
@@ -114,5 +131,31 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+.list-data{
+  a{
+    display: block;
+  }
+}
+.el-card{
+  text-align: left;
+  width: 100%;
+  &.el-card{
+    margin-top: 20px;
+  }
+  .title{
+  }
+  .content{
+    padding: 20px;
+    .detail{
+      text-align: 40px;
+    }
+  }
+  .bottom{
+    padding: 0 20px;
+    .goto-detail{
+      float: right;
+    }
+  }
 }
 </style>

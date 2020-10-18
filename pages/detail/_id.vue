@@ -1,11 +1,6 @@
 <template>
-  <div class="container">
-    <div>
-      <div class="header">
-        <div class="line1"></div>
-        
-      </div>
-    </div>
+  <div class="wrap-detail">
+    <Header :isBack="true" />
     <div class="article-detail">
       <div class="title">
         {{list[0].title}}
@@ -20,7 +15,6 @@
 import { fetchArticle } from '@/api/article'
 export default {
   data(){
-
   },
   async asyncData(context){
     const {params} = context
@@ -36,17 +30,24 @@ export default {
   created(){
   },
   methods: {
+      goBack() {
+        this.$router.push('/home')
+      }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
+.wrap-detail{
+  padding: 0 20px 20px;
   margin: 0 auto;
   min-height: 100vh;
   /* display: flex; */
   justify-content: center;
   align-items: center;
+  /deep/ img{
+    width: 100%;
+  }
 }
 
 .subtitle {
@@ -77,16 +78,22 @@ export default {
 .article-detail{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
   .title {
     display: block;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 24px;
     color: #35495e;
     height: 40px;
     line-height: 40px;
+    margin: 16px 0;
   }
   .content{
+    /deep/ {
+      h2{
+        color: #35495e;
+        font-size: 18px;
+      }
+    }
   }
 }
 
