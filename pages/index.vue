@@ -45,7 +45,7 @@ export default {
   text-align: center;
 }
 
-.title {
+/* .title {
   font-family:
     'Quicksand',
     'Source Sans Pro',
@@ -61,7 +61,7 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
+} */
 
 .subtitle {
   font-weight: 300;

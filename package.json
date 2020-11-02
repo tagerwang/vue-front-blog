@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 8084 --hostname 192.168.1.7",
+    "dev": "nuxt --port 8084",
+    "pm2":"pm2 start npm --name vue-front-blog --run start --watch",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

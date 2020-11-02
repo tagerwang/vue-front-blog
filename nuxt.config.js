@@ -1,6 +1,9 @@
 import path from 'path'
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  router: {
+    middleware: 'async'
+  },
   head: {
     title: 'vue-front-blog',
     meta: [

@@ -65,10 +65,10 @@
 import { fetchArticle } from '@/api/article'
 export default {
   data(){
-    list: []
+    return {
+    }
   },
   async asyncData(context){
-    console.log('context')
     let data = {}
     await fetchArticle(0).then(response => {
         data.list = response.data
