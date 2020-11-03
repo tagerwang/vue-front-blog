@@ -1,5 +1,6 @@
-import path from 'path'
-export default {
+// import path from 'path'
+const path = require('path')
+module.exports = {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   router: {
     middleware: 'async'
@@ -63,5 +64,8 @@ export default {
         })
       }
     }
+  },
+  server: {
+    port: 8084
   }
 }
