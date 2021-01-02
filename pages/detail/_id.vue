@@ -85,7 +85,7 @@ export default {
   box-shadow: 0 8px 16px 0 rgba(7,17,27,.05);
   border-radius: 12px;
   box-sizing: border-box;
-  padding: 10px 36px 24px;
+  padding: 10px 2% 24px;
   position: relative;
   .title {
     display: block;
