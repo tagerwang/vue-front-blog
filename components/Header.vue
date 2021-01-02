@@ -55,7 +55,7 @@
     box-shadow: 0 8px 16px 0 rgba(28,31,33,.1);
     .wrap-content{
       margin: 0 auto;
-      width: 1200px;
+      max-width: 1200px;
       position: relative;
       /deep/ .el-menu.el-menu--horizontal{
         border: none;
