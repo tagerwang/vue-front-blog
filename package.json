@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "ssrDev": "cross-env NODE_ENV=development node server/app.js --watch server --mode development",
     "ssrDev:pro": "cross-env NODE_ENV=development nodemon server/app.js --watch server --mode production",
-    "ssrBuild": "nuxt build --mode production && npm run build",
+    "ssrBuild": "nuxt build --mode production",
     "ssrStart": "cross-env NODE_ENV=production node server/app.js"
   },
   "dependencies": {

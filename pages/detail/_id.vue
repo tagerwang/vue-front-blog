@@ -5,6 +5,9 @@
       <div class="title">
         {{list[0].title}}
       </div>
+      <div class="desc">
+        <span>创建日期：<i>{{$dayjs(list[0].createdAt).format('YYYY-MM-DD HH:mm')}}</i></span>
+      </div>
       <div class="content" v-html="list[0].content">
       </div>
     </div>
@@ -39,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrap-detail{
-  padding: 0 20px 20px;
+  padding: 0 0 20px;
   margin: 0 auto;
   min-height: 100vh;
   /* display: flex; */
@@ -77,7 +80,13 @@ export default {
   }
 .article-detail{
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(7,17,27,.05);
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 10px 36px 24px;
+  position: relative;
   .title {
     display: block;
     font-weight: 700;
@@ -86,6 +95,12 @@ export default {
     height: 40px;
     line-height: 40px;
     margin: 16px 0;
+  }
+  .desc{
+    font-size: 12px;
+    color: #9199a1;
+    line-height: 24px;
+    margin-bottom: 24px;
   }
   .content{
     /deep/ {
@@ -97,4 +112,16 @@ export default {
   }
 }
 
+// 详情页通用
+p, /deep/ p{
+  font-size: 16px;
+  text-indent: 0;
+  line-height: 32px;
+  color: #1c1f21;
+  overflow-x: auto;
+  text-align: justify;
+}
+ul, ol, /deep/ ul, /deep/ ol{
+  margin: 16px 0;
+}
 </style>

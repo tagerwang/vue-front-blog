@@ -1,9 +1,9 @@
 {
     "apps": {
         "name": "vue-front-blog",
-        "script": "./server/app.js",
+        "script": "npm",
         "cwd": "./",
-        "args": "",
+        "args": "run ssrStart",
         "interpreter": "",
         "interpreter_args": "",
         "watch": [

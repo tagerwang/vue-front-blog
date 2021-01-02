@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style lang='scss'>
 html {
   font-family:
     'Source Sans Pro',
@@ -23,7 +23,9 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
+body{
+  background: #f8fafc
+}
 *,
 *::before,
 *::after {
@@ -58,5 +60,19 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+h1, h2, h3, h4, h5, h6{
+  margin:16px 0;
+}
+i{
+  font-style: normal;
+}
+code{
+  color: #476582;
+  padding: .25rem .5rem;
+  margin: 0;
+  font-size: .85em;
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
 }
 </style>
